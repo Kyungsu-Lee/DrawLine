@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{BB4DA958-BBD7-F6BC-3DB4-98BD28E578C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_4_2;UNITY_5_4;UNITY_5;UNITY_ANALYTICS;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EDITOR_RETINA;ENABLE_RETINA_GUISTYLES;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;ENABLE_RUNTIME_GI;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_NETWORK;ENABLE_UNITYWEBREQUEST;ENABLE_TEXTUREID_MAP;PLAYERCONNECTION_LISTENS_FIXED_PORT;DEBUGGER_LISTENS_FIXED_PORT;PLATFORM_SUPPORTS_ADS_ID;SUPPORT_ENVIRONMENT_VARIABLES;PLATFORM_SUPPORTS_PROFILER;PLATFORM_HAS_NO_SUPPORT_FOR_BUCKET_ALLOCATOR;STRICTCPP_NEW_DELETE_SIGNATURES;HAS_NEON_SKINNIG;UNITY_INPUT_SIMULATE_EVENTS;PLATFORM_ALWAYS_USES_STDOUT_FOR_LOG;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;UNITY_IOS;UNITY_IPHONE;UNITY_IPHONE_API;SUPPORT_MULTIPLE_DISPLAYS;ENABLE_IL2CPP;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE;ENABLE_IOS_ON_DEMAND_RESOURCES;ENABLE_IOS_APP_SLICING</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\code\FileStreamHelper.cs" />
+     <Compile Include="Assets\code\PreviousScene.cs" />
+     <Compile Include="Assets\code\SceneTransition.cs" />
+     <Compile Include="Assets\code\ToHome.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Instruction\Action.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Instruction\Direction.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Instruction\Instruction.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Instruction\Instructions.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Instruction\Number.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Map Objects\Accessory.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Map Objects\BadCharacter.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Map Objects\Block.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Map Objects\Character.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Map Objects\CharacterStatus.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Map Objects\Map.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Map Objects\MapObject.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Map Objects\Obtacle.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Map Objects\Point.cs" />
+     <Compile Include="Assets\code\gamepage\Objects\Map Objects\UnMovableObtacle.cs" />
+     <Compile Include="Assets\code\gamepage\default\Base.cs" />
+     <Compile Include="Assets\code\gamepage\default\PreviousPageOnGame.cs" />
+     <Compile Include="Assets\code\gamepage\default\Resource.cs" />
+     <Compile Include="Assets\code\gamepage\default\makeMap.cs" />
+     <Compile Include="Assets\code\gamepage\default\toHomeGame.cs" />
+     <Compile Include="Assets\code\gamepage\event\BlockEvent.cs" />
+     <Compile Include="Assets\code\gamepage\event\SingleEvent\CharacterJumpUpEvent.cs" />
+     <Compile Include="Assets\code\gamepage\event\SingleEvent\ClearEvent.cs" />
+     <Compile Include="Assets\code\gamepage\event\SingleEvent\RubyEvent.cs" />
+     <Compile Include="Assets\code\gamepage\event\SingleEvent\StarEvent.cs" />
+     <Compile Include="Assets\code\gamepage\event\TouchEvent\BtnClear.cs" />
+     <Compile Include="Assets\code\gamepage\event\TouchEvent\CharacterTouchEvent.cs" />
+     <Compile Include="Assets\code\gamepage\event\TouchEvent\Hint.cs" />
+     <Compile Include="Assets\code\gamepage\event\TouchEvent\TouchEvent.cs" />
+     <Compile Include="Assets\code\gamepage\event\TouchEvent\btnEvent.cs" />
+     <Compile Include="Assets\code\gamepage\event\Update\BadCharacter.cs" />
+     <Compile Include="Assets\code\gamepage\event\Update\CharacterErrorEvent.cs" />
+     <Compile Include="Assets\code\gamepage\event\Update\CharacterImgChange.cs" />
+     <Compile Include="Assets\code\gamepage\event\Update\CharacterInObtacles.cs" />
+     <Compile Include="Assets\code\gamepage\event\Update\CharacterMove.cs" />
+     <Compile Include="Assets\code\gamepage\event\Update\Fire.cs" />
+     <Compile Include="Assets\code\gamepage\event\Update\InstructionCheck.cs" />
+     <Compile Include="Assets\code\gamepage\event\Update\RingEvent.cs" />
+     <Compile Include="Assets\code\gamepage\event\Update\Water.cs" />
+     <Compile Include="Assets\code\gamepage\event\Update\checkEvent.cs" />
+     <Compile Include="Assets\code\page2\Clear.cs" />
+     <Compile Include="Assets\code\page2\MainCharacter.cs" />
+     <Compile Include="Assets\code\page2\MovingClouds.cs" />
+     <Compile Include="Assets\code\page2\toNextPage.cs" />
+     <Compile Include="Assets\code\page3\ToNextPage_3.cs" />
+     <Compile Include="Assets\code\page4\Hide.cs" />
+     <Compile Include="Assets\code\page4\SetCircle.cs" />
+     <Compile Include="Assets\code\page4\ToNextPage4.cs" />
+     <None Include="Assets\Resources\stage400.txt" />
+     <None Include="Assets\Resources\text309.txt" />
+     <None Include="Assets\Resources\text403.txt" />
+     <None Include="Assets\Resources\text411.txt" />
+     <None Include="Assets\Resources\text602.txt" />
+     <None Include="Assets\Resources\text401.txt" />
+     <None Include="Assets\Resources\text307.txt" />
+     <None Include="Assets\Resources\text606.txt" />
+     <None Include="Assets\Resources\text608.txt" />
+     <None Include="Assets\Resources\text410.txt" />
+     <None Include="Assets\Resources\text609.txt" />
+     <None Include="Assets\Resources\stage600.txt" />
+     <None Include="Assets\Resources\text311.txt" />
+     <None Include="Assets\Resources\text607.txt" />
+     <None Include="Assets\Resources\text302.txt" />
+     <None Include="Assets\Resources\text408.txt" />
+     <None Include="Assets\Resources\text504.txt" />
+     <None Include="Assets\Resources\text601.txt" />
+     <None Include="Assets\Resources\text407.txt" />
+     <None Include="Assets\Resources\text503.txt" />
+     <None Include="Assets\Resources\text500.txt" />
+     <None Include="Assets\Resources\text406.txt" />
+     <None Include="Assets\Resources\text404.txt" />
+     <None Include="Assets\Resources\text508.txt" />
+     <None Include="Assets\Resources\text505.txt" />
+     <None Include="Assets\Resources\text400.txt" />
+     <None Include="Assets\Resources\text301.txt" />
+     <None Include="Assets\Resources\text600.txt" />
+     <None Include="Assets\Resources\text300.txt" />
+     <None Include="Assets\Resources\text605.txt" />
+     <None Include="Assets\Resources\text303.txt" />
+     <None Include="Assets\Resources\text506.txt" />
+     <None Include="Assets\Resources\text604.txt" />
+     <None Include="Assets\Resources\text502.txt" />
+     <None Include="Assets\Resources\text610.txt" />
+     <None Include="Assets\Resources\text511.txt" />
+     <None Include="Assets\Resources\text509.txt" />
+     <None Include="Assets\Resources\text308.txt" />
+     <None Include="Assets\Resources\text402.txt" />
+     <None Include="Assets\Resources\text510.txt" />
+     <None Include="Assets\Resources\text409.txt" />
+     <None Include="Assets\Resources\text310.txt" />
+     <None Include="Assets\Resources\text305.txt" />
+     <None Include="Assets\Resources\text603.txt" />
+     <None Include="Assets\Resources\text304.txt" />
+     <None Include="Assets\Resources\text306.txt" />
+     <None Include="Assets\Resources\stage500.txt" />
+     <None Include="Assets\Resources\text611.txt" />
+     <None Include="Assets\Resources\text405.txt" />
+     <None Include="Assets\Resources\text501.txt" />
+     <None Include="Assets\Resources\stage300.txt" />
+     <None Include="Assets\Resources\text507.txt" />
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

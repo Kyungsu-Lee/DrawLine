@@ -1,0 +1,39 @@
+//character with c
+//obtacle with o
+//accessory with a
+//black with b
+//path with character number
+stage 1
+
+size
+5
+
+character
+4
+0 2
+0 1
+3 3
+1 1
+
+accessory
+4
+1 4 1
+1 3 2
+2 1 3
+2 2 4
+
+
+//fire with f
+//water with w
+//Rock with r
+//bad character with b
+obtacle
+0
+
+
+Map
+1 1 2 2 2
+1 2 2 3 2
+1 4 4 3 2
+2 4 3 3 2
+2 2 2 2 2
