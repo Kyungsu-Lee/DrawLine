@@ -66,6 +66,20 @@ namespace ObjectHierachy
 			set { obj.GetComponent<Transform> ().localScale = value;}
 		}
 
+		public Point getIndex
+		{
+			get
+			{
+				int n = Map.instance.size;
+
+				for(int i=0; i<n; i++)
+					for(int j=0; j<n; j++)
+						if(Map.instance.get(i,j).Equals(this))
+							return new Point(i,j);
+
+				return new Point (-1, -1);
+			}
+		}
 
 	}
 }

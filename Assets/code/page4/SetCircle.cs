@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
+using System;
 using Instruction;
 using FileHelper;
 using UnityEngine.SceneManagement;
@@ -16,22 +17,10 @@ public class SetCircle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		FileHelper.FileStreamHelper.log ("open page 4");
+
 		int index = 0;
-		/*
-		TextAsset data = Resources.Load ("stage" + Resource.stage, typeof(TextAsset)) as TextAsset;
-		StringReader str = new StringReader (data.text);
-
-		string line;
-
-		while ((line = str.ReadLine ()) != null) {
-
-			if (line.Equals ("0")) {
-				circles [(index)++].transform.GetComponent<SpriteRenderer> ().sprite = circle_unclear;
-			} else if (line.Equals ("1")) {
-				circles [(index)++].transform.GetComponent<SpriteRenderer> ().sprite = circle_clear;
-			}
-		}
-		*/
 
 		isclear = new bool[12];
 
@@ -47,17 +36,36 @@ public class SetCircle : MonoBehaviour {
 		string deb = "";
 
 		foreach (string s in stage) {
-			if (s != null && s != "") {
-				if (!(isclear[index] = !s.Equals ("0")))
-					circles [(index)++].transform.GetComponent<SpriteRenderer> ().sprite = circle_unclear;
-				else
-					circles [(index)++].transform.GetComponent<SpriteRenderer> ().sprite = circle_clear;
-
+			if (s != null && (s.Equals ("0") || s.Equals ("1"))) 
+			{
+				try {
+					
+					if (!(isclear [index] = !s.Equals ("0")))
+						circles [(index)++].transform.GetComponent<SpriteRenderer> ().sprite = circle_unclear;
+					else
+						circles [(index)++].transform.GetComponent<SpriteRenderer> ().sprite = circle_clear;
+					
+				} catch (Exception e) 
+				{
+					
+					FileHelper.FileStreamHelper.log ("file open error " + e.StackTrace);
+				}
 				deb += s;
+			} else {
+				deb += s;
+
+				char[] c = s.ToCharArray ();
+
+				string error = "";
+
+				foreach (char cc in c)
+					error += cc.GetHashCode () + " ";
+
+				FileHelper.FileStreamHelper.log ("error string : " + error);
 			}
 		}
 	
-		Debug.Log (deb);
+		FileHelper.FileStreamHelper.log ("Read string from file \"stage" + Resource.stage + ".txt\" :  " + deb);
 
 	}
 	

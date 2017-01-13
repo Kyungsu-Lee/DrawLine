@@ -26,14 +26,14 @@ public class TouchEvent : MonoBehaviour {
 
 	public void OnMouseDown()
 	{
-		Debug.Log ("down");
+		FileHelper.FileStreamHelper.log ("down");
 		overCheck = true;
 		this.transform.GetComponent<SpriteRenderer> ().color = Color.black;
 	}
 
 	public void OnMouseUp()
 	{
-		Debug.Log ("UP");
+		FileHelper.FileStreamHelper.log ("UP");
 		overCheck = false;
 		this.transform.GetComponent<SpriteRenderer> ().color = Color.white;
 	}
@@ -41,7 +41,7 @@ public class TouchEvent : MonoBehaviour {
 	public void OnMouseOver()
 	{
 		if(overCheck)
-			Debug.Log ("over");
+			FileHelper.FileStreamHelper.log ("over");
 		time = 0;
 
 	}

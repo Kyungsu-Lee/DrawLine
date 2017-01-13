@@ -10,9 +10,13 @@ public class Hint : MonoBehaviour {
 
 	ArrayList blocks;
 
+	public Sprite clicked;
+	public Sprite unclicked;
+
 	// Use this for initialization
 	void Start () {
 		blocks = new ArrayList ();
+		unclicked = this.transform.GetComponent<SpriteRenderer> ().sprite;
 	}
 	
 	// Update is called once per frame
@@ -21,9 +25,26 @@ public class Hint : MonoBehaviour {
 
 	void OnMouseDown()
 	{
+
 		Map.instance.blockAction += hint;
 		Map.instance.allBlockAction ();
 		Map.instance.blockAction -= hint;
+
+		this.transform.GetComponent<SpriteRenderer> ().sprite = clicked;
+
+		FileHelper.FileStreamHelper.log ("hint btn clicked");
+		string str = "";
+		foreach (Block b in blocks)
+			str += b.getIndex + " ";
+		FileHelper.FileStreamHelper.log (str);
+	}
+
+	void OnMouseUp()
+	{
+		changColorWhite ();
+
+		this.transform.GetComponent<SpriteRenderer> ().sprite = unclicked;
+
 	}
 
 	void hint(Block block)
@@ -31,8 +52,6 @@ public class Hint : MonoBehaviour {
 		if (block.index == Resource.character.index && block.color.Equals(new Color(1,1,1,1))) {
 			changeColorCharacter (block, Resource.character);
 		}
-
-		Invoke ("changColorWhite", 0.5f);
 	}
 
 	void changColorWhite()

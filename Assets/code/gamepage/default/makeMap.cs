@@ -92,18 +92,19 @@ public class makeMap : MonoBehaviour
 		
 		int n = Map.instance.size;
 
-		string gdb = "";
+		string gdb = "map info \n";
 
 		for (int i = 0; i < n; i++)
 			for (int j = 0; j < n; j++)
-				gdb += i + " " + j + " : " +Map.instance.get (i, j).OnObject + " // " + Map.instance.get(i, j).index + "\n";
+				gdb += i + " " + j + " : (index : " +  Map.instance.get(i, j).index + ")" + "  OnObject : "  + Map.instance.get (i, j).OnObject + "\n";
 
-		Debug.Log (gdb);
+		FileHelper.FileStreamHelper.log (gdb);
 	}
 
 	public void loadStage(int stage)
 	{
 		//Character.characters.Clear ();
+
 
 		TextAsset data = Resources.Load ("text" + stage, typeof(TextAsset)) as TextAsset;
 		StringReader str = new StringReader (data.text);
@@ -251,7 +252,6 @@ public class makeMap : MonoBehaviour
 	public void activate(Character c)
 	{
 		Resource.character = c;
-		//Debug.Log (c.ToString ());
 		c.onBlock ().changeColor (c.Color);
 	}
 

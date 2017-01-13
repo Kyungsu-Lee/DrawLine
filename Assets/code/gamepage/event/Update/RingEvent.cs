@@ -21,11 +21,6 @@ public class RingEvent : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-		foreach (Character c in Character.characters)
-			if (c == null)
-				Debug.Log ("a");
-
 		float rate = Character.clearedCharacter / (float)(Character.Count);
 
 		int n = Map.instance.size;
@@ -41,6 +36,7 @@ public class RingEvent : MonoBehaviour {
 				time += Time.deltaTime;
 			else if (time < 4) {
 				time += Time.deltaTime;
+				//FileHelper.FileStreamHelper.log ("ring changed");
 				this.transform.GetComponent<SpriteRenderer> ().sprite = clear [Resource.stage % 100];
 
 			} else {
@@ -55,8 +51,8 @@ public class RingEvent : MonoBehaviour {
 				try{
 				stages [Resource.stage % 100] = "1";
 				}catch(Exception e) {
-					Debug.Log (e.StackTrace);
-					Debug.Log (Resource.stage % 100 + " : " + stages.Length);
+					FileHelper.FileStreamHelper.log (e.StackTrace);
+					FileHelper.FileStreamHelper.log (Resource.stage % 100 + " : " + stages.Length);
 				}
 
 				string s = "";
@@ -66,13 +62,14 @@ public class RingEvent : MonoBehaviour {
 				FileStreamHelper.writeStringToFile (s, "stage" + (Resource.stage / 100) * 100 + ".txt");
 
 				//for (int i = 0; i < 12; i++)
-					Debug.Log (s);
+				FileHelper.FileStreamHelper.log (s);
 
 				if (Resource.stage % 100 <= 12) {
 					Resource.stage++;
 					MapObject.ALLOBJECT.Clear ();
 					Accessory.accessory.Clear ();
 					Character.characters.Clear ();
+					FileHelper.FileStreamHelper.log (Resource.stage % 100 + "clear");
 					SceneManager.LoadScene ("Main");
 				}
 			}

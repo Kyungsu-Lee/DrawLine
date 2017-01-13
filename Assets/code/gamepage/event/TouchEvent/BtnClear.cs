@@ -5,6 +5,9 @@ using ObjectHierachy;
 
 public class BtnClear : MonoBehaviour {
 
+	public Sprite clicked;
+	public Sprite unclicked;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -15,6 +18,11 @@ public class BtnClear : MonoBehaviour {
 	
 	}
 
+	void OnMouseDown()
+	{
+		this.transform.GetComponent<SpriteRenderer> ().sprite = clicked;
+	}
+
 	void OnMouseUp()
 	{
 		for (int i = Character.characters.Count - 1; i >= 0; i--) {
@@ -23,6 +31,8 @@ public class BtnClear : MonoBehaviour {
 			Map.instance.blockAction -= clean;
 			(Character.characters [i] as Character).toStartPoint ();
 		}
+
+		this.transform.GetComponent<SpriteRenderer> ().sprite = unclicked;
 	}
 
 	private void clean(Block block)

@@ -5,6 +5,9 @@ using Instruction;
 
 public class PreviousScene : MonoBehaviour {
 
+	public Sprite clicked;
+	public Sprite unclicked;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -15,8 +18,15 @@ public class PreviousScene : MonoBehaviour {
 	
 	}
 
+	void OnMouseDown()
+	{
+		this.transform.GetComponent<SpriteRenderer> ().sprite = clicked;
+	}
+
 	void OnMouseUp()
 	{
 		SceneManager.LoadScene ("p3");
+
+		this.transform.GetComponent<SpriteRenderer> ().sprite = unclicked;
 	}
 }

@@ -57,5 +57,6 @@ public class toNextPage : MonoBehaviour {
 		this.transform.GetComponent<SpriteRenderer> ().sprite = img [0];
 		page = true;
 
+		FileHelper.FileStreamHelper.log ("clicked play button");
 	}
 }

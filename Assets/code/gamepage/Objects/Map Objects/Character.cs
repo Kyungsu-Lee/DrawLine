@@ -165,7 +165,8 @@ namespace ObjectHierachy
 
 		private void beforeAction()
 		{
-			Debug.Log ("before Action");
+			FileHelper.FileStreamHelper.log ("before Action");
+			FileHelper.FileStreamHelper.log (this.name + " starts from " + onBlock ().getIndex );
 
 			if (map.get (currentPosition).OnObject == this)
 				map.get (currentPosition).OnObject = null;
@@ -205,9 +206,17 @@ namespace ObjectHierachy
 			return str;
 		}
 
+		public string name
+		{
+			get {
+				return this.obj.name;
+			}
+		}
+
 		private void afterAction()
 		{
-			Debug.Log ("After Action");
+			FileHelper.FileStreamHelper.log ("After Action");
+			FileHelper.FileStreamHelper.log (this.name + " is in " + onBlock ().getIndex );
 
 			if (Map.instance.get (currentPosition).OnObject == null)
 				locateAt (currentPosition.x, currentPosition.y);
@@ -217,6 +226,11 @@ namespace ObjectHierachy
 
 			if (onBlock ().OnObject != null && onBlock ().OnObject is Accessory && (onBlock ().OnObject as Accessory).index == index && Resource.canClear) 
 			{
+				if (Moving) {
+					toStartPoint ();
+					return;
+				}
+
 				this.Cleared = true;
 				Resource.clearedColor = Color;
 				Resource.movRuby [index] = true;
@@ -224,7 +238,7 @@ namespace ObjectHierachy
 				foreach (Character c in Character.characters)
 					if (!c.Cleared) {
 						c.activate ();
-						Debug.Log (c.ToString ());
+						FileHelper.FileStreamHelper.log(c.ToString ());
 						break;
 					}
 
@@ -235,7 +249,7 @@ namespace ObjectHierachy
 						if (map.get (i, j).color.Equals (Color))
 							map.get (i, j).canOn = false;
 				
-			} else if (onBlock ().OnObject != null && onBlock ().OnObject is Accessory && (onBlock ().OnObject as Accessory).index != index) {
+			} else if (onBlock ().OnObject != null && onBlock ().OnObject is Accessory && (onBlock ().OnObject as Accessory).index != index && !Moving) {
 				toStartPoint ();
 			}
 
@@ -261,7 +275,7 @@ namespace ObjectHierachy
 
 		public void Stop()
 		{
-			Debug.Log ("Stop Action");
+			FileHelper.FileStreamHelper.log ("Stop Action");
 			if (characterstatus.PointQueue.Count > 0) {
 				currentPosition = characterStatus.PointQueue.Dequeue () as Point;
 				characterstatus.PointStack.Push (currentPosition);
@@ -477,14 +491,13 @@ namespace ObjectHierachy
 			this.Cleared = false;
 			this.Match.toStartPoint ();
 			this.Match.toInitialScale ();
+
+			FileHelper.FileStreamHelper.log (this.name + " is to start point " + this.StartPoint.ToString ());
 		}
 
 		public void toPoint(Point from, Point to)
 		{
 			Point p = from - to;
-
-			Debug.Log (from.ToString () + " " + to.ToString ());
-			Debug.Log (p.ToString ());
 
 			int count = 0;
 
@@ -498,6 +511,8 @@ namespace ObjectHierachy
 			map.get (from).changeColor (new Color (1, 1, 1));
 
 			locateAt (to);
+
+			FileHelper.FileStreamHelper.log (this.name + " is to start point " + to.ToString ());
 			activate ();
 		}
 	}

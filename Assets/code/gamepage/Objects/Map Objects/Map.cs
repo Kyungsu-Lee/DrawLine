@@ -82,6 +82,8 @@ namespace ObjectHierachy
 
 		public bool checkBound(Point p)
 		{
+			FileHelper.FileStreamHelper.log ("Boundary check : " + p.ToString ());
+
 			return checkBound (p.x, p.y);
 		}
 

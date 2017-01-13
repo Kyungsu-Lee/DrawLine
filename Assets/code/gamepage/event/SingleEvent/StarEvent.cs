@@ -58,14 +58,6 @@ public class StarEvent : MonoBehaviour {
 			removeTime = 0;
 			this.transform.GetComponent<Transform> ().position = new Vector3 (100, 100, 0);
 			removeInterval = Random.Range (20, 35) / 100f;
-			/*
-			foreach (Character c in Character.characters)
-				if (!c.cleared) {
-					activate (c);
-					Debug.Log (c.ToString ());
-					break;
-				}
-				*/
 		}
 
 		

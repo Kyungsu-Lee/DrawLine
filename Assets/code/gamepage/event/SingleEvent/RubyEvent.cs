@@ -31,6 +31,7 @@ public class RubyEvent : MonoBehaviour {
 		time = 0;
 		speed = 5.0f;
 
+		if(Resource.ring != null)
 		ringPosition = Resource.ring.GetComponent<Transform> ().position;
 
 		initScale = this.transform.GetComponent<Transform> ().localScale;

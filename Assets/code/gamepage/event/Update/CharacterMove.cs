@@ -24,21 +24,29 @@ public class CharacterMove : MonoBehaviour {
 
 			if (character.Moving) {
 				
-				if (!Map.instance.checkBound (character.characterStatus.NextPositionPoint)) {
+				if (!Map.instance.checkBound (character.characterStatus.NextPositionPoint)) 
+				{
+					//FileHelper.FileStreamHelper.log ("Out of Boundary");
+
+					CharacterErrorEvent.error_jmp = true;
+
 					if ((time += Time.deltaTime) < 1) {
 						return;
 					} else {
 						if (character.characterStatus.PointQueue.Count > 0)
 							character.characterStatus.PointQueue.Clear ();
-						character.Moving = false;
+							character.Moving = false;
 						if (character.characterStatus.action != ObjectHierachy.Action.JUMP && character.characterStatus.PointCursorStack.Count > 0) {
 							character.toPoint (character.currentPosition, character.characterStatus.PointCursorStack.Peek () as Point);
 						}
 						time = 0;
+						FileHelper.FileStreamHelper.log ("Out of Boundary");
 						return;
 					}
 				}
 		
+				//FileHelper.FileStreamHelper.log ("character moving");
+
 				if (character.characterStatus.direction == INSTRUCTION.UP)
 					character.moveUp ();
 				else if (character.characterStatus.direction == INSTRUCTION.DOWN)
@@ -49,8 +57,10 @@ public class CharacterMove : MonoBehaviour {
 					character.moveLeft ();
 			}
 
-			if (character.onNext ())
+			if (character.onNext ()) {
 				character.Stop ();
+				FileHelper.FileStreamHelper.log ("character stopped : " + Resource.character.name);
+			}
 			
 		}
 

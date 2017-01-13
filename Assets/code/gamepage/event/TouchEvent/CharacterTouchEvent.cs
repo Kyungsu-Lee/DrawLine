@@ -14,7 +14,7 @@ public class CharacterTouchEvent : MonoBehaviour {
 	void Update () {
 	
 	}
-
+	/*
 	public void OnMouseUp()
 	{
 		float alpha = 1f;
@@ -29,7 +29,7 @@ public class CharacterTouchEvent : MonoBehaviour {
 			{
 				Resource.character = ((Character)Character.characters [i]);
 				Character c = Resource.character as Character;
-				Debug.Log (Resource.character.index);
+				FileHelper.FileStreamHelper.log (Resource.character.index);
 				c.obj.GetComponent<SpriteRenderer> ().color = new Color (c.obj.GetComponent<SpriteRenderer> ().color.r, c.obj.GetComponent<SpriteRenderer> ().color.g, c.obj.GetComponent<SpriteRenderer> ().color.b);
 				c.Match.obj.GetComponent<SpriteRenderer> ().color = new Color (c.Match.obj.GetComponent<SpriteRenderer> ().color.r, c.Match.obj.GetComponent<SpriteRenderer> ().color.g, c.Match.obj.GetComponent<SpriteRenderer> ().color.b);
 				break;
@@ -38,4 +38,5 @@ public class CharacterTouchEvent : MonoBehaviour {
 
 
 	}
+	*/
 }

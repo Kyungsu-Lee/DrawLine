@@ -50,7 +50,7 @@ public class btnEvent : MonoBehaviour {
 		else if (this.transform.Equals (btns [12].transform)) {
 			Resource.instructionInput = true;
 
-			Debug.Log (Resource.instruction.ToString ());
+			FileHelper.FileStreamHelper.log (Resource.instruction.ToString ());
 		}
 	}
 
