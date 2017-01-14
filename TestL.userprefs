@@ -1,19 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/text605.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/code/page4/ToNextPage4.cs">
     <Files>
-      <File FileName="Assets/code/gamepage/Objects/Map Objects/Character.cs" Line="376" Column="18" />
-      <File FileName="Assets/code/gamepage/Objects/Map Objects/BadCharacter.cs" Line="35" Column="79" />
-      <File FileName="Assets/code/gamepage/event/Update/BadCharacter.cs" Line="94" Column="42" />
-      <File FileName="Assets/code/page4/Hide.cs" Line="27" Column="49" />
-      <File FileName="Assets/code/gamepage/event/TouchEvent/BtnClear.cs" Line="23" Column="30" />
-      <File FileName="Assets/code/page2/Clear.cs" Line="7" Column="31" />
-      <File FileName="Assets/code/gamepage/event/TouchEvent/Hint.cs" Line="35" Column="36" />
-      <File FileName="Assets/Resources/stage300.txt" Line="1" Column="1" />
-      <File FileName="Assets/Resources/stage400.txt" Line="1" Column="1" />
-      <File FileName="Assets/Resources/stage500.txt" Line="1" Column="1" />
-      <File FileName="Assets/Resources/stage600.txt" Line="1" Column="1" />
-      <File FileName="Assets/Resources/text605.txt" Line="35" Column="6" />
+      <File FileName="Assets/code/page4/ToNextPage4.cs" Line="39" Column="3" />
+      <File FileName="Assets/code/gamepage/event/TouchEvent/Hint.cs" Line="39" Column="41" />
+      <File FileName="Assets/code/gamepage/Objects/Map Objects/Block.cs" Line="81" Column="5" />
+      <File FileName="Assets/code/gamepage/event/Update/CharacterMove.cs" Line="31" Column="43" />
+      <File FileName="Assets/code/gamepage/Objects/Map Objects/Map.cs" Line="85" Column="4" />
+      <File FileName="Assets/code/gamepage/event/Update/RingEvent.cs" Line="39" Column="7" />
+      <File FileName="Assets/code/gamepage/Objects/Map Objects/Character.cs" Line="231" Column="13" />
+      <File FileName="Assets/code/FileStreamHelper.cs" Line="113" Column="15" />
+      <File FileName="Assets/code/gamepage/event/Update/CharacterErrorEvent.cs" Line="86" Column="4" />
+      <File FileName="Assets/code/gamepage/event/SingleEvent/CharacterJumpUpEvent.cs" Line="60" Column="26" />
+      <File FileName="Assets/code/gamepage/Objects/Map Objects/Point.cs" Line="31" Column="37" />
+      <File FileName="Assets/code/page2/MainCharacter.cs" Line="23" Column="19" />
+      <File FileName="Assets/code/page4/SetCircle.cs" Line="21" Column="51" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
