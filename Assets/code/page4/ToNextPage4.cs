@@ -36,7 +36,7 @@ public class ToNextPage4 : MonoBehaviour {
 			if (this.transform.Equals (GameObject.Find ("circle_clear (" + i + ")").transform))
 				idx = i;
 
-		if (idx == 0 || SetCircle.isclear [idx] || SetCircle.isclear [idx - 1])
+		//if (idx == 0 || SetCircle.isclear [idx] || SetCircle.isclear [idx - 1])
 		{
 			for (int i = 0; i < 12; i++)
 				if (this.transform.Equals (GameObject.Find ("circle_clear (" + i + ")").transform)) {
