@@ -2,19 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/code/page4/ToNextPage4.cs">
     <Files>
-      <File FileName="Assets/code/page4/ToNextPage4.cs" Line="39" Column="3" />
-      <File FileName="Assets/code/gamepage/event/TouchEvent/Hint.cs" Line="39" Column="41" />
-      <File FileName="Assets/code/gamepage/Objects/Map Objects/Block.cs" Line="81" Column="5" />
-      <File FileName="Assets/code/gamepage/event/Update/CharacterMove.cs" Line="31" Column="43" />
-      <File FileName="Assets/code/gamepage/Objects/Map Objects/Map.cs" Line="85" Column="4" />
-      <File FileName="Assets/code/gamepage/event/Update/RingEvent.cs" Line="39" Column="7" />
-      <File FileName="Assets/code/gamepage/Objects/Map Objects/Character.cs" Line="231" Column="13" />
-      <File FileName="Assets/code/FileStreamHelper.cs" Line="113" Column="15" />
-      <File FileName="Assets/code/gamepage/event/Update/CharacterErrorEvent.cs" Line="86" Column="4" />
-      <File FileName="Assets/code/gamepage/event/SingleEvent/CharacterJumpUpEvent.cs" Line="60" Column="26" />
-      <File FileName="Assets/code/gamepage/Objects/Map Objects/Point.cs" Line="31" Column="37" />
-      <File FileName="Assets/code/page2/MainCharacter.cs" Line="23" Column="19" />
-      <File FileName="Assets/code/page4/SetCircle.cs" Line="21" Column="51" />
+      <File FileName="Assets/code/page4/SetCircle.cs" Line="18" Column="32" />
+      <File FileName="Assets/code/page4/ToNextPage4.cs" Line="39" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

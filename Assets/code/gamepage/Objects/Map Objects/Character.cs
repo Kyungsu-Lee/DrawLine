@@ -292,115 +292,7 @@ namespace ObjectHierachy
 
 			after ();
 		}
-
-		public void changeStatus(Instruction.Instruction instruction)
-		{
-			Instruction.Instruction _tmp = instruction;
-
-			if (_tmp.instruction == INSTRUCTION.NULL)
-				_tmp = _tmp.next;
-
-
-			INSTRUCTION direction = _tmp.next.instruction;
-			int count = ((Number)_tmp.next.next).count ();
-			characterstatus.direction = direction;
-
-
-
-			if (_tmp != null) 
-			{
-				if (_tmp.instruction == INSTRUCTION.MOVE) {
-					this.Speed = 20f;
-
-					int _x = x;
-					int _y = y;
-
-					for (int i = 0; i < count; i++) {
-
-						if (direction == INSTRUCTION.LEFT) {
-							_x--;
-						} else if (direction == INSTRUCTION.UP) {
-							_y++;
-						} else if (direction == INSTRUCTION.DOWN) {
-							_y--;
-						} else if (direction == INSTRUCTION.RIGHT) {
-							_x++;
-						}
-
-
-						characterstatus.PointQueue.Enqueue (new Point (_x, _y));
-					}
-
-					this.characterStatus.action = Action.MOVE;
-
-						
-				} 
-				else if (_tmp.instruction == INSTRUCTION.JUMP) 
-				{
-					this.Speed = 13f;
-
-					int _x = x;
-					int _y = y;
-
-					int __x = x;
-					int __y = y;
-
-					for (int i = 0; i < count; i++) {
-
-						if (direction == INSTRUCTION.LEFT) {
-							_x -= 2;
-							__x--;
-						} else if (direction == INSTRUCTION.UP) {
-							_y += 2;
-							__y++;
-						} else if (direction == INSTRUCTION.DOWN) {
-							_y -= 2;
-							__y--;
-						} else if (direction == INSTRUCTION.RIGHT) {
-							_x += 2;
-							__x++;
-						}
-
-						characterstatus.PointQueue.Enqueue (new Point (_x, _y));
-						characterstatus.action = Action.JUMP;
-					}
-
-				} else if (_tmp.instruction == INSTRUCTION.BREAK) {
-					this.Speed = 20f;
-
-					int _x = x;
-					int _y = y;
-
-
-					for (int i = 0; i < count; i++) {
-
-						if (direction == INSTRUCTION.LEFT) {
-							_x--;
-						} else if (direction == INSTRUCTION.UP) {
-							_y++;
-						} else if (direction == INSTRUCTION.DOWN) {
-							_y--;
-						} else if (direction == INSTRUCTION.RIGHT) {
-							_x++;
-						}
-
-						if (map.get (_x, _y).OnObject != null && map.get (_x, _y).OnObject is ObjectHierachy.BadCharacter) {
-							characterStatus.PointQueue.Enqueue (new Point (_x, _y));
-							(map.get (_x, _y).OnObject as BadCharacter).die ();
-							map.get (_x, _y).OnObject = this;
-							characterstatus.action = Action.BREAK;
-						}
-						else
-							break;
-					}
-
-				}
-
-				_tmp = _tmp.next.next.next;
-			}
-
-			before ();
-		}
+			
 
 		/// <summary>
 		/// Checks the distance is close enough.
@@ -514,6 +406,115 @@ namespace ObjectHierachy
 
 			FileHelper.FileStreamHelper.log (this.name + " is to start point " + to.ToString ());
 			activate ();
+		}
+
+		public void changeStatus(Instruction.Instruction instruction)
+		{
+			Instruction.Instruction _tmp = instruction;
+
+			if (_tmp.instruction == INSTRUCTION.NULL)
+				_tmp = _tmp.next;
+
+
+			INSTRUCTION direction = _tmp.next.instruction;
+			int count = ((Number)_tmp.next.next).count ();
+			characterstatus.direction = direction;
+
+
+
+			if (_tmp != null) 
+			{
+				if (_tmp.instruction == INSTRUCTION.MOVE) {
+					this.Speed = 20f;
+
+					int _x = x;
+					int _y = y;
+
+					for (int i = 0; i < count; i++) {
+
+						if (direction == INSTRUCTION.LEFT) {
+							_x--;
+						} else if (direction == INSTRUCTION.UP) {
+							_y++;
+						} else if (direction == INSTRUCTION.DOWN) {
+							_y--;
+						} else if (direction == INSTRUCTION.RIGHT) {
+							_x++;
+						}
+
+
+						characterstatus.PointQueue.Enqueue (new Point (_x, _y));
+					}
+
+					this.characterStatus.action = Action.MOVE;
+
+
+				} 
+				else if (_tmp.instruction == INSTRUCTION.JUMP) 
+				{
+					this.Speed = 13f;
+
+					int _x = x;
+					int _y = y;
+
+					int __x = x;
+					int __y = y;
+
+					for (int i = 0; i < count; i++) {
+
+						if (direction == INSTRUCTION.LEFT) {
+							_x -= 2;
+							__x--;
+						} else if (direction == INSTRUCTION.UP) {
+							_y += 2;
+							__y++;
+						} else if (direction == INSTRUCTION.DOWN) {
+							_y -= 2;
+							__y--;
+						} else if (direction == INSTRUCTION.RIGHT) {
+							_x += 2;
+							__x++;
+						}
+
+						characterstatus.PointQueue.Enqueue (new Point (_x, _y));
+						characterstatus.action = Action.JUMP;
+					}
+
+				} else if (_tmp.instruction == INSTRUCTION.BREAK) {
+					this.Speed = 20f;
+
+					int _x = x;
+					int _y = y;
+
+
+					for (int i = 0; i < count; i++) {
+
+						if (direction == INSTRUCTION.LEFT) {
+							_x--;
+						} else if (direction == INSTRUCTION.UP) {
+							_y++;
+						} else if (direction == INSTRUCTION.DOWN) {
+							_y--;
+						} else if (direction == INSTRUCTION.RIGHT) {
+							_x++;
+						}
+
+						if (map.get (_x, _y).OnObject != null && map.get (_x, _y).OnObject is ObjectHierachy.BadCharacter) {
+							characterStatus.PointQueue.Enqueue (new Point (_x, _y));
+							(map.get (_x, _y).OnObject as BadCharacter).die ();
+							map.get (_x, _y).OnObject = this;
+							characterstatus.action = Action.BREAK;
+						}
+						else
+							break;
+					}
+
+				}
+
+				_tmp = _tmp.next.next.next;
+			}
+
+			before ();
 		}
 	}
 
