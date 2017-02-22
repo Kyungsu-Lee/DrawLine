@@ -174,7 +174,7 @@ public class makeMap : MonoBehaviour
 	{
 		if (initialState) {
 			if (Resource.character != null)
-			activate (Resource.character);
+				Resource.character.activate ();
 			initialState = false;
 		}
 

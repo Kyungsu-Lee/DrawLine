@@ -139,6 +139,18 @@ namespace ObjectHierachy
 			set;
 		}
 
+		public static Character find(GameObject obj)
+		{
+			Character find_character = null;
+
+			foreach (Character c in characters)
+				if (obj.Equals (c.obj.gameObject)) {
+					find_character = c;
+				}
+
+			return find_character;
+		}
+
 		/// <summary>
 		/// Initializes a new instance of the class. Cannot use this.
 		/// </summary>
@@ -357,10 +369,17 @@ namespace ObjectHierachy
 			);
 		}
 
+		public bool IsActivated {
+			get;
+			set;
+		}
+
 		public void activate()
 		{
+			Resource.character.IsActivated = false;
 			Resource.character = this;
 			onBlock ().changeColor (Color);
+			IsActivated = true;
 		}
 
 		public override void toStartPoint ()
@@ -389,6 +408,9 @@ namespace ObjectHierachy
 
 		public void toPoint(Point from, Point to)
 		{
+			if (to == null)
+				toStartPoint ();
+
 			Point p = from - to;
 
 			int count = 0;
@@ -403,7 +425,7 @@ namespace ObjectHierachy
 			map.get (from).changeColor (new Color (1, 1, 1));
 
 			locateAt (to);
-
+			characterstatus.PointStack.Push (to);
 			FileHelper.FileStreamHelper.log (this.name + " is to start point " + to.ToString ());
 			activate ();
 		}
