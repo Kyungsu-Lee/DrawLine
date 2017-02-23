@@ -5840,3 +5840,202 @@ Game Start
 2017:02:23:09:38:09 :: character1 is in (1, 2)
 2017:02:23:09:38:09 :: character stopped : character1
 2017:02:23:09:38:11 :: character1 is to start point (0, 2)
+2017:02:23:09:48:04 :: map info 
+0 0 : (index : 2)  OnObject : 
+0 1 : (index : 2)  OnObject : character2
+0 2 : (index : 1)  OnObject : ruby_0
+1 0 : (index : 2)  OnObject : 
+1 1 : (index : 1)  OnObject : character1
+1 2 : (index : 1)  OnObject : 
+2 0 : (index : 2)  OnObject : ruby_1
+2 1 : (index : 1)  OnObject : 
+2 2 : (index : 1)  OnObject : 
+
+2017:02:23:09:48:05 :: open page 4
+2017:02:23:09:48:05 :: error string : 48 10 
+2017:02:23:09:48:05 :: error string : 10 
+2017:02:23:09:48:05 :: Read string from file "stage300.txt" :  111000000000
+
+
+2017:02:23:09:48:07 :: clicked stage 3
+2017:02:23:09:48:07 :: map info 
+0 0 : (index : 3)  OnObject : character3
+0 1 : (index : 2)  OnObject : character2
+0 2 : (index : 1)  OnObject : character1
+1 0 : (index : 3)  OnObject : 
+1 1 : (index : 2)  OnObject : water(Clone)
+1 2 : (index : 1)  OnObject : fire(Clone)
+2 0 : (index : 3)  OnObject : ruby_2
+2 1 : (index : 2)  OnObject : ruby_1
+2 2 : (index : 1)  OnObject : ruby_0
+
+2017:02:23:09:48:11 :: MOVE RIGHT ONE 
+2017:02:23:09:48:11 :: before Action
+2017:02:23:09:48:11 :: character1 starts from (0, 2)
+2017:02:23:09:48:11 :: Boundary check : (1, 2)
+2017:02:23:09:48:11 :: Stop Action
+2017:02:23:09:48:11 :: After Action
+2017:02:23:09:48:11 :: character1 is in (1, 2)
+2017:02:23:09:48:11 :: character stopped : character1
+2017:02:23:09:48:13 :: character1 is to start point (0, 2)
+2017:02:23:09:49:21 :: map info 
+0 0 : (index : 2)  OnObject : 
+0 1 : (index : 2)  OnObject : character2
+0 2 : (index : 1)  OnObject : ruby_0
+1 0 : (index : 2)  OnObject : 
+1 1 : (index : 1)  OnObject : character1
+1 2 : (index : 1)  OnObject : 
+2 0 : (index : 2)  OnObject : ruby_1
+2 1 : (index : 1)  OnObject : 
+2 2 : (index : 1)  OnObject : 
+
+2017:02:23:09:49:21 :: open page 4
+2017:02:23:09:49:21 :: error string : 48 10 
+2017:02:23:09:49:21 :: error string : 10 
+2017:02:23:09:49:21 :: Read string from file "stage300.txt" :  111000000000
+
+
+2017:02:23:09:49:23 :: clicked stage 3
+2017:02:23:09:49:23 :: map info 
+0 0 : (index : 3)  OnObject : character3
+0 1 : (index : 2)  OnObject : character2
+0 2 : (index : 1)  OnObject : character1
+1 0 : (index : 3)  OnObject : 
+1 1 : (index : 2)  OnObject : water(Clone)
+1 2 : (index : 1)  OnObject : fire(Clone)
+2 0 : (index : 3)  OnObject : ruby_2
+2 1 : (index : 2)  OnObject : ruby_1
+2 2 : (index : 1)  OnObject : ruby_0
+
+2017:02:23:09:49:25 :: MOVE RIGHT ONE 
+2017:02:23:09:49:25 :: before Action
+2017:02:23:09:49:25 :: character1 starts from (0, 2)
+2017:02:23:09:49:25 :: Boundary check : (1, 2)
+2017:02:23:09:49:26 :: Stop Action
+2017:02:23:09:49:26 :: After Action
+2017:02:23:09:49:26 :: character1 is in (1, 2)
+2017:02:23:09:49:26 :: character stopped : character1
+2017:02:23:09:49:27 :: character1 is to start point (0, 2)
+2017:02:23:09:49:49 :: map info 
+0 0 : (index : 2)  OnObject : 
+0 1 : (index : 2)  OnObject : character2
+0 2 : (index : 1)  OnObject : ruby_0
+1 0 : (index : 2)  OnObject : 
+1 1 : (index : 1)  OnObject : character1
+1 2 : (index : 1)  OnObject : 
+2 0 : (index : 2)  OnObject : ruby_1
+2 1 : (index : 1)  OnObject : 
+2 2 : (index : 1)  OnObject : 
+
+2017:02:23:09:49:49 :: open page 4
+2017:02:23:09:49:49 :: error string : 48 10 
+2017:02:23:09:49:49 :: error string : 10 
+2017:02:23:09:49:49 :: Read string from file "stage300.txt" :  111000000000
+
+
+2017:02:23:09:49:51 :: clicked stage 3
+2017:02:23:09:49:51 :: map info 
+0 0 : (index : 3)  OnObject : character3
+0 1 : (index : 2)  OnObject : character2
+0 2 : (index : 1)  OnObject : character1
+1 0 : (index : 3)  OnObject : 
+1 1 : (index : 2)  OnObject : water(Clone)
+1 2 : (index : 1)  OnObject : fire(Clone)
+2 0 : (index : 3)  OnObject : ruby_2
+2 1 : (index : 2)  OnObject : ruby_1
+2 2 : (index : 1)  OnObject : ruby_0
+
+2017:02:23:09:49:53 :: MOVE RIGHT ONE 
+2017:02:23:09:49:53 :: before Action
+2017:02:23:09:49:53 :: character1 starts from (0, 2)
+2017:02:23:09:49:53 :: Boundary check : (1, 2)
+2017:02:23:09:49:54 :: Stop Action
+2017:02:23:09:49:54 :: After Action
+2017:02:23:09:49:54 :: character1 is in (1, 2)
+2017:02:23:09:49:54 :: character stopped : character1
+2017:02:23:09:49:55 :: character1 is to start point (0, 2)
+2017:02:23:09:50:31 :: map info 
+0 0 : (index : 2)  OnObject : 
+0 1 : (index : 2)  OnObject : character2
+0 2 : (index : 1)  OnObject : ruby_0
+1 0 : (index : 2)  OnObject : 
+1 1 : (index : 1)  OnObject : character1
+1 2 : (index : 1)  OnObject : 
+2 0 : (index : 2)  OnObject : ruby_1
+2 1 : (index : 1)  OnObject : 
+2 2 : (index : 1)  OnObject : 
+
+2017:02:23:09:50:32 :: open page 4
+2017:02:23:09:50:32 :: error string : 48 10 
+2017:02:23:09:50:32 :: error string : 10 
+2017:02:23:09:50:32 :: Read string from file "stage300.txt" :  111000000000
+
+
+2017:02:23:09:50:33 :: clicked stage 3
+2017:02:23:09:50:33 :: map info 
+0 0 : (index : 3)  OnObject : character3
+0 1 : (index : 2)  OnObject : character2
+0 2 : (index : 1)  OnObject : character1
+1 0 : (index : 3)  OnObject : 
+1 1 : (index : 2)  OnObject : water(Clone)
+1 2 : (index : 1)  OnObject : fire(Clone)
+2 0 : (index : 3)  OnObject : ruby_2
+2 1 : (index : 2)  OnObject : ruby_1
+2 2 : (index : 1)  OnObject : ruby_0
+
+2017:02:23:09:50:37 :: MOVE RIGHT ONE 
+2017:02:23:09:50:37 :: before Action
+2017:02:23:09:50:37 :: character1 starts from (0, 2)
+2017:02:23:09:50:37 :: Boundary check : (1, 2)
+2017:02:23:09:50:38 :: Stop Action
+2017:02:23:09:50:38 :: After Action
+2017:02:23:09:50:38 :: character1 is in (1, 2)
+2017:02:23:09:50:38 :: character stopped : character1
+2017:02:23:09:50:39 :: character1 is to start point (0, 2)
+2017:02:23:09:52:58 :: map info 
+0 0 : (index : 2)  OnObject : 
+0 1 : (index : 2)  OnObject : character2
+0 2 : (index : 1)  OnObject : ruby_0
+1 0 : (index : 2)  OnObject : 
+1 1 : (index : 1)  OnObject : character1
+1 2 : (index : 1)  OnObject : 
+2 0 : (index : 2)  OnObject : ruby_1
+2 1 : (index : 1)  OnObject : 
+2 2 : (index : 1)  OnObject : 
+
+2017:02:23:09:52:59 :: open page 4
+2017:02:23:09:52:59 :: error string : 48 10 
+2017:02:23:09:52:59 :: error string : 10 
+2017:02:23:09:52:59 :: Read string from file "stage300.txt" :  111000000000
+
+
+2017:02:23:09:53:00 :: clicked stage 3
+2017:02:23:09:53:00 :: map info 
+0 0 : (index : 3)  OnObject : character3
+0 1 : (index : 2)  OnObject : character2
+0 2 : (index : 1)  OnObject : character1
+1 0 : (index : 3)  OnObject : 
+1 1 : (index : 2)  OnObject : water(Clone)
+1 2 : (index : 1)  OnObject : fire(Clone)
+2 0 : (index : 3)  OnObject : ruby_2
+2 1 : (index : 2)  OnObject : ruby_1
+2 2 : (index : 1)  OnObject : ruby_0
+
+2017:02:23:09:53:02 :: MOVE RIGHT ONE 
+2017:02:23:09:53:02 :: before Action
+2017:02:23:09:53:02 :: character1 starts from (0, 2)
+2017:02:23:09:53:02 :: Boundary check : (1, 2)
+2017:02:23:09:53:03 :: Stop Action
+2017:02:23:09:53:03 :: After Action
+2017:02:23:09:53:03 :: character1 is in (1, 2)
+2017:02:23:09:53:03 :: character stopped : character1
+2017:02:23:09:53:04 :: character1 is to start point (0, 2)
+2017:02:23:09:53:07 :: MOVE RIGHT ONE 
+2017:02:23:09:53:07 :: before Action
+2017:02:23:09:53:07 :: character1 starts from (0, 2)
+2017:02:23:09:53:07 :: Boundary check : (1, 2)
+2017:02:23:09:53:08 :: Stop Action
+2017:02:23:09:53:08 :: After Action
+2017:02:23:09:53:08 :: character1 is in (1, 2)
+2017:02:23:09:53:08 :: character stopped : character1
+2017:02:23:09:53:09 :: character1 is to start point (0, 2)

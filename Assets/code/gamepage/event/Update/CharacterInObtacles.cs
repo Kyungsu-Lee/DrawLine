@@ -88,7 +88,6 @@ public class CharacterInObtacles : MonoBehaviour {
 					this.character.obj.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
 					this.character.onBlock ().OnObject.obj.GetComponent<Transform> ().localScale = fireScale;
 					this.character.obj.GetComponent<Transform> ().localScale = new Vector3 (characterScale.x, characterScale.y, characterScale.z);
-					time = 0;
 					character.obtacles = ObtacleKind.NULL;
 					onceFlag = true;
 					fireFlag = false;

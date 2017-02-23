@@ -397,7 +397,7 @@ namespace ObjectHierachy
 
 
 					if (map.get (i, j).color.Equals (this.Color)) {
-						map.get (i, j).changeColor (new Color (1, 1, 1, 1));
+						map.get (i, j).changeBasicColor();
 						map.get (i, j).canOn = true;
 					}
 				}
@@ -421,12 +421,12 @@ namespace ObjectHierachy
 
 			for (int i = 0; !(i * p.unitPoint ()).Equals(p); i++, count++) {
 
-				map.get (to + i * p.unitPoint ()).changeColor(new Color (1, 1, 1, 1));
+				map.get (to + i * p.unitPoint ()).changeBasicColor();
 				if (count > 100)
 					break;
 			}
 
-			map.get (from).changeColor (new Color (1, 1, 1));
+			map.get (from).changeBasicColor ();
 
 			locateAt (to);
 			characterstatus.PointStack.Push (to);
