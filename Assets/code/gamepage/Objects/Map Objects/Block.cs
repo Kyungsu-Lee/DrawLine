@@ -7,8 +7,7 @@ namespace ObjectHierachy
 	public class Block
 	{
 		public Transform obj;
-		Color defaultColor = new Color (1f, 1, 1, 1f);
-		Color changedColor = Color.green;
+		public Color defaultColor;
 
 		public MapObject OnObject {
 			get;
@@ -32,12 +31,17 @@ namespace ObjectHierachy
 		public Block(Transform obj)
 		{
 			this.obj = obj;
-			obj.GetComponent<SpriteRenderer> ().color = defaultColor;
+			defaultColor = obj.GetComponent<SpriteRenderer> ().color;
 		}
 
 		public void changeColor(Color color)
 		{
 			obj.GetComponent<SpriteRenderer> ().color = new Color (color.r, color.g, color.b);
+		}
+
+		public void changeBasicColor()
+		{
+			obj.GetComponent<SpriteRenderer> ().color = defaultColor;
 		}
 
 		public Block makeBlock()

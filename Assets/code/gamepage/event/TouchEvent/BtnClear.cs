@@ -37,6 +37,6 @@ public class BtnClear : MonoBehaviour {
 
 	private void clean(Block block)
 	{
-		block.changeColor(new Color(1,1,1,1));
+		block.changeBasicColor ();
 	}
 }

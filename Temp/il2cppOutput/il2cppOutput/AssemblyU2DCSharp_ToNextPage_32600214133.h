@@ -1,0 +1,65 @@
+﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+#include <stdint.h>
+
+// UnityEngine.Sprite[]
+struct SpriteU5BU5D_t3359083662;
+
+#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// ToNextPage_3
+struct  ToNextPage_3_t2600214133  : public MonoBehaviour_t1158329972
+{
+public:
+	// UnityEngine.Sprite[] ToNextPage_3::clicked
+	SpriteU5BU5D_t3359083662* ___clicked_2;
+	// UnityEngine.Sprite[] ToNextPage_3::unclicked
+	SpriteU5BU5D_t3359083662* ___unclicked_3;
+	// System.Int32 ToNextPage_3::index
+	int32_t ___index_4;
+
+public:
+	inline static int32_t get_offset_of_clicked_2() { return static_cast<int32_t>(offsetof(ToNextPage_3_t2600214133, ___clicked_2)); }
+	inline SpriteU5BU5D_t3359083662* get_clicked_2() const { return ___clicked_2; }
+	inline SpriteU5BU5D_t3359083662** get_address_of_clicked_2() { return &___clicked_2; }
+	inline void set_clicked_2(SpriteU5BU5D_t3359083662* value)
+	{
+		___clicked_2 = value;
+		Il2CppCodeGenWriteBarrier(&___clicked_2, value);
+	}
+
+	inline static int32_t get_offset_of_unclicked_3() { return static_cast<int32_t>(offsetof(ToNextPage_3_t2600214133, ___unclicked_3)); }
+	inline SpriteU5BU5D_t3359083662* get_unclicked_3() const { return ___unclicked_3; }
+	inline SpriteU5BU5D_t3359083662** get_address_of_unclicked_3() { return &___unclicked_3; }
+	inline void set_unclicked_3(SpriteU5BU5D_t3359083662* value)
+	{
+		___unclicked_3 = value;
+		Il2CppCodeGenWriteBarrier(&___unclicked_3, value);
+	}
+
+	inline static int32_t get_offset_of_index_4() { return static_cast<int32_t>(offsetof(ToNextPage_3_t2600214133, ___index_4)); }
+	inline int32_t get_index_4() const { return ___index_4; }
+	inline int32_t* get_address_of_index_4() { return &___index_4; }
+	inline void set_index_4(int32_t value)
+	{
+		___index_4 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif

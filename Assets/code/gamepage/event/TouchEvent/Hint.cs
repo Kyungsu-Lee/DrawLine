@@ -49,15 +49,15 @@ public class Hint : MonoBehaviour {
 
 	void hint(Block block)
 	{
-		if (block.index == Resource.character.index && block.color.Equals(new Color(1,1,1,1))) {
+		if (block.index == Resource.character.index && block.color.Equals(block.defaultColor)) {
 			changeColorCharacter (block, Resource.character);
 		}
 	}
 
 	void changColorWhite()
 	{
-		foreach(Block block in blocks)
-			block.changeColor (new Color (1, 1, 1, 1));
+		foreach (Block block in blocks)
+			block.changeBasicColor ();
 
 		blocks.Clear ();
 	}
