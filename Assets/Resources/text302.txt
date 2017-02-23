@@ -23,8 +23,8 @@ accessory
 
 obtacle
 2
-1 2 w
-1 1 f
+1 2 f
+1 1 w
 
 Map
 1 1 1

@@ -15,6 +15,9 @@ public class CharacterInObtacles : MonoBehaviour {
 
 	float time = 0;
 
+	bool fireFlag = false;
+	bool onceFlag = true;
+
 	// Use this for initialization
 	void Start () {
 		fireScale = fire.GetComponent<Transform> ().localScale;
@@ -54,12 +57,28 @@ public class CharacterInObtacles : MonoBehaviour {
 
 
 			} else if (character.obtacles == ObtacleKind.FIRE) {
-				if ((time += Time.deltaTime) < 0.5f) {
+
+
+				if (character.obj.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("red_fire"))
+					fireFlag = true;
+
+				if (!fireFlag && onceFlag) {
+					this.character.obj.GetComponent<Animator> ().SetTrigger ("fire");
+					onceFlag = false;
+				}
+				
+				/*else if ((time += Time.deltaTime) < 10f) {
 					float rate = Mathf.Pow (time, 2.0f);
 					this.character.obj.GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0, 1 - 2 * time);
 					this.character.onBlock ().OnObject.obj.GetComponent<Transform> ().localScale = new Vector3 (fireScale.x * (0.32f + 0.2f * (0.5f - rate)), fireScale.y * (0.32f + 0.2f * (0.5f - rate)), fireScale.z);
 					this.character.obj.GetComponent<Transform> ().localScale = new Vector3 (characterScale.x * (0.7f + 0.2f * (rate)), characterScale.y * (0.7f + 0.2f * (rate)), characterScale.z);
-				} else {
+				
+
+				} */
+
+
+				else if(fireFlag && !character.obj.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("red_fire"))
+				{
 					//character.toStartPoint ();
 					try {
 						character.toPoint (character.characterStatus.PointStack.Pop () as Point, character.characterStatus.PointStack.Pop () as Point);
@@ -71,7 +90,12 @@ public class CharacterInObtacles : MonoBehaviour {
 					this.character.obj.GetComponent<Transform> ().localScale = new Vector3 (characterScale.x, characterScale.y, characterScale.z);
 					time = 0;
 					character.obtacles = ObtacleKind.NULL;
+					onceFlag = true;
+					fireFlag = false;
 				}
+
+				
+
 			} else if (character.obtacles == ObtacleKind.WATER) {
 				if ((time += Time.deltaTime) < 0.5f) {
 					float rate = Mathf.Pow (time, 2.0f);
