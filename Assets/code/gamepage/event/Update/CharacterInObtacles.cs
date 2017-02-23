@@ -19,31 +19,31 @@ public class CharacterInObtacles : MonoBehaviour {
 	void Start () {
 		fireScale = fire.GetComponent<Transform> ().localScale;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
-		if (Resource.character != null) {
+		if (Resource.character != null) 
+		{
 			character = Resource.character;
 
 			if (character != null && character.obtacles == ObtacleKind.BAD) {
 
 				if ((time += Time.deltaTime) < 0.5f) {
-				
+
 					this.character.obj.GetComponent<Transform> ().localScale = 
-					new Vector3 (
+						new Vector3 (
 						characterScale.x * (1 - 2 * time),
 						characterScale.y * (1 - 2 * time),
 						characterScale.z
 					);
 
 					this.character.obj.GetComponent<Transform> ().Rotate (new Vector3 (360 * 2 * time, 0));
-				
+
 				} else if (time >= 0.5f) {
-					try
-					{
-					character.toPoint(character.characterStatus.PointStack.Pop() as Point , character.characterStatus.PointStack.Pop() as Point);
-					}catch(Exception e) {
+					try {
+						character.toPoint (character.characterStatus.PointStack.Pop () as Point, character.characterStatus.PointStack.Pop () as Point);
+					} catch (Exception e) {
 						character.toStartPoint ();
 					}
 					this.character.obj.GetComponent<Transform> ().localScale = new Vector3 (characterScale.x, characterScale.y, characterScale.z);
@@ -61,10 +61,9 @@ public class CharacterInObtacles : MonoBehaviour {
 					this.character.obj.GetComponent<Transform> ().localScale = new Vector3 (characterScale.x * (0.7f + 0.2f * (rate)), characterScale.y * (0.7f + 0.2f * (rate)), characterScale.z);
 				} else {
 					//character.toStartPoint ();
-					try
-					{
-						character.toPoint(character.characterStatus.PointStack.Pop() as Point , character.characterStatus.PointStack.Pop() as Point);
-					}catch(Exception e) {
+					try {
+						character.toPoint (character.characterStatus.PointStack.Pop () as Point, character.characterStatus.PointStack.Pop () as Point);
+					} catch (Exception e) {
 						character.toStartPoint ();
 					}
 					this.character.obj.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
@@ -78,13 +77,11 @@ public class CharacterInObtacles : MonoBehaviour {
 					float rate = Mathf.Pow (time, 2.0f);
 					this.character.obj.GetComponent<SpriteRenderer> ().color = new Color (67 / 255.0f, 218 / 255.0f, 236 / 255.0f, 1 - 2 * time);
 					this.character.obj.GetComponent<Transform> ().localScale = new Vector3 (characterScale.x * (0.7f + 0.2f * (rate)), characterScale.y * (0.7f + 0.2f * (rate)), characterScale.z);
-				} else 
-				{
+				} else {
 					//character.toStartPoint ();
-					try
-					{
-						character.toPoint(character.characterStatus.PointStack.Pop() as Point , character.characterStatus.PointStack.Pop() as Point);
-					}catch(Exception e) {
+					try {
+						character.toPoint (character.characterStatus.PointStack.Pop () as Point, character.characterStatus.PointStack.Pop () as Point);
+					} catch (Exception e) {
 						character.toStartPoint ();
 					}
 					this.character.obj.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1);
@@ -92,7 +89,9 @@ public class CharacterInObtacles : MonoBehaviour {
 					time = 0;
 					character.obtacles = ObtacleKind.NULL;
 				}
-			} else if (character.obtacles == ObtacleKind.ROCK) {
+			} else if (character.obtacles == ObtacleKind.ROCK)
+				
+			{
 				if ((time += Time.deltaTime) < 0.5f) {
 					this.character.obj.GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 1 - 2 * time);
 				} else {
@@ -107,7 +106,9 @@ public class CharacterInObtacles : MonoBehaviour {
 					time = 0;
 					character.obtacles = ObtacleKind.NULL;
 				}
-			} else {
+			} 
+			else 
+			{
 				if (this.character != null && this.character.obj != null) {
 					//localscale = this.transform.GetComponent<Transform> ().localScale;
 					characterScale = this.character.obj.GetComponent<Transform> ().localScale;
@@ -115,4 +116,5 @@ public class CharacterInObtacles : MonoBehaviour {
 			}
 		}
 	}
-}
+} 
+

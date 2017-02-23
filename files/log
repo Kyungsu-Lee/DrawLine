@@ -2934,6 +2934,7 @@ Game Start
 2017:02:22:12:21:15 :: character1 is in (1, 1)
 2017:02:22:12:21:15 :: character stopped : character1
 2017:02:22:12:21:15 :: character1 is to start point (0, 1)
+<<<<<<< HEAD
 2017:02:23:10:23:50 :: map info 
 0 0 : (index : 2)  OnObject : 
 0 1 : (index : 2)  OnObject : character2
@@ -4338,6 +4339,30 @@ Game Start
 2 2 : (index : 1)  OnObject : 
 
 2017:02:23:04:27:07 :: map info 
+0 0 : (index : 2)  OnObject : 
+0 1 : (index : 2)  OnObject : character2
+0 2 : (index : 1)  OnObject : ruby_0
+1 0 : (index : 2)  OnObject : 
+1 1 : (index : 1)  OnObject : character1
+1 2 : (index : 1)  OnObject : 
+2 0 : (index : 2)  OnObject : ruby_1
+2 1 : (index : 1)  OnObject : 
+2 2 : (index : 1)  OnObject : 
+
+=======
+>>>>>>> 19edecc4e2b3c45a9b08a9cb9b4edbab08af5696
+2017:02:23:05:17:34 :: map info 
+0 0 : (index : 2)  OnObject : 
+0 1 : (index : 2)  OnObject : character2
+0 2 : (index : 1)  OnObject : ruby_0
+1 0 : (index : 2)  OnObject : 
+1 1 : (index : 1)  OnObject : character1
+1 2 : (index : 1)  OnObject : 
+2 0 : (index : 2)  OnObject : ruby_1
+2 1 : (index : 1)  OnObject : 
+2 2 : (index : 1)  OnObject : 
+
+2017:02:23:05:17:43 :: map info 
 0 0 : (index : 2)  OnObject : 
 0 1 : (index : 2)  OnObject : character2
 0 2 : (index : 1)  OnObject : ruby_0
