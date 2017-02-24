@@ -377,11 +377,12 @@ namespace ObjectHierachy
 		public void activate()
 		{
 			Resource.character.IsActivated = false;
-
+			Resource.character.activeAnimation = false;
 			if (Resource.character.characterStatus.PointStack.Count == 0 && Resource.character.StartPoint.Equals (Resource.character.currentPosition))
 				Map.instance.get (Resource.character.currentPosition).changeBasicColor ();
 
 			Resource.character = this;
+			Resource.character.activeAnimation = true;
 			onBlock ().changeColor (Color);
 			IsActivated = true;
 		}
@@ -542,6 +543,29 @@ namespace ObjectHierachy
 
 			before ();
 		}
+
+		//for animations below
+
+		public bool activeAnimation
+		{
+			set {
+				this.obj.GetComponent<Animator> ().SetBool ("stay", !value);
+			}
+		}
+
+
+		public bool ActionFinished {
+			get {
+				return this.obj.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("dumpAction");
+			}
+		}
+
+		public void afterActionFinish()
+		{
+			this.obj.GetComponent<Animator> ().SetTrigger ("actionFinish");
+		}
+
+
 	}
 
 

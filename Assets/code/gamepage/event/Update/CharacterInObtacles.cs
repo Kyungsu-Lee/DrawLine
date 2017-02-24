@@ -15,7 +15,6 @@ public class CharacterInObtacles : MonoBehaviour {
 
 	float time = 0;
 
-	bool fireFlag = false;
 	bool onceFlag = true;
 
 	// Use this for initialization
@@ -58,28 +57,13 @@ public class CharacterInObtacles : MonoBehaviour {
 
 			} else if (character.obtacles == ObtacleKind.FIRE) {
 
-
-				if (character.obj.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("red_fire"))
-					fireFlag = true;
-
-				if (!fireFlag && onceFlag) {
+				if (onceFlag) {
 					this.character.obj.GetComponent<Animator> ().SetTrigger ("fire");
 					onceFlag = false;
 				}
-				
-				/*else if ((time += Time.deltaTime) < 10f) {
-					float rate = Mathf.Pow (time, 2.0f);
-					this.character.obj.GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0, 1 - 2 * time);
-					this.character.onBlock ().OnObject.obj.GetComponent<Transform> ().localScale = new Vector3 (fireScale.x * (0.32f + 0.2f * (0.5f - rate)), fireScale.y * (0.32f + 0.2f * (0.5f - rate)), fireScale.z);
-					this.character.obj.GetComponent<Transform> ().localScale = new Vector3 (characterScale.x * (0.7f + 0.2f * (rate)), characterScale.y * (0.7f + 0.2f * (rate)), characterScale.z);
-				
 
-				} */
-
-
-				else if(fireFlag && !character.obj.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("red_fire"))
+				else if(character.ActionFinished)
 				{
-					//character.toStartPoint ();
 					try {
 						character.toPoint (character.characterStatus.PointStack.Pop () as Point, character.characterStatus.PointStack.Pop () as Point);
 					} catch (Exception e) {
@@ -89,11 +73,10 @@ public class CharacterInObtacles : MonoBehaviour {
 					this.character.onBlock ().OnObject.obj.GetComponent<Transform> ().localScale = fireScale;
 					this.character.obj.GetComponent<Transform> ().localScale = new Vector3 (characterScale.x, characterScale.y, characterScale.z);
 					character.obtacles = ObtacleKind.NULL;
+					character.afterActionFinish ();
 					onceFlag = true;
-					fireFlag = false;
 				}
 
-				
 
 			} else if (character.obtacles == ObtacleKind.WATER) {
 				if ((time += Time.deltaTime) < 0.5f) {
