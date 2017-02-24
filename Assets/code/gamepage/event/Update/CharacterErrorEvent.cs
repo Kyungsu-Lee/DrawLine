@@ -41,34 +41,11 @@ public class CharacterErrorEvent : MonoBehaviour {
 			if (flag_log) {
 				FileHelper.FileStreamHelper.log ("error_jmp is true");
 				flag_log = false;
+				Resource.character.obj.GetComponent<Animator> ().SetTrigger ("wall_side");
 			}
 
-			if ((time += Time.deltaTime) < 1f) {
-				if(!flag)
-					Resource.character.obj.GetComponent<Transform> ().position 
-					= new Vector3 
-						(
-							position.x,
-							Resource.character.obj.GetComponent<Transform> ().position.y + bound/8,
-							position.z
-						);
-				else
-					Resource.character.obj.GetComponent<Transform> ().position 
-					= new Vector3 
-						(
-							position.x,
-							Resource.character.obj.GetComponent<Transform> ().position.y - bound/8,
-							position.z
-						);
-
-				if (Resource.character.obj.GetComponent<Transform> ().position.y >= position.y +  bound
-				   || Resource.character.obj.GetComponent<Transform> ().position.y < position.y
-				){
-					flag = !flag;
-				}
-
-
-			} else {
+			if(Resource.character.ActionFinished) {
+				Resource.character.afterActionFinish ();
 				time = 0;
 				error_jmp = false;
 				flag_log = true;

@@ -87,8 +87,10 @@ public class makeMap : MonoBehaviour
 
 		clearEvent += clear;
 
-		foreach (Character c in Character.characters)
+		foreach (Character c in Character.characters) {
 			c.onBlock ().canOn = false;
+			c.activate ();
+		}
 		
 		int n = Map.instance.size;
 

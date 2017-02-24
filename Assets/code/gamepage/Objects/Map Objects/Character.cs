@@ -301,7 +301,9 @@ namespace ObjectHierachy
 
 			if (Resource.instruction != null && Resource.instruction.next != null && characterstatus.PointQueue.Count == 0)
 				Resource.instructionInput = true;
-
+			
+				this.obj.GetComponent<Animator> ().SetTrigger ("moveFinish");
+				moveFlag = true;
 			after ();
 		}
 			
@@ -339,12 +341,28 @@ namespace ObjectHierachy
 			return checkDistance (characterStatus.NextPositionPoint as Point, Map.instance.Unitlength / Speed * 100 / 99);
 		}
 
+		private bool moveFlag = true;
+
 		public void moveUp()
 		{
+			if (moveFlag) {
+				moveFlag = false;
+				if (characterStatus.action == Action.JUMP)
+					this.obj.GetComponent<Animator> ().SetTrigger ("jump_up");
+				else
+					this.obj.GetComponent<Animator> ().SetTrigger ("move_up");
+			}
 			position = new Vector3 (position.x, position.y + map.get (0, 0).length () / Speed, position.z);
 		}
 		public void moveDown()
 		{
+			if (moveFlag) {
+				moveFlag = false;
+				if (characterStatus.action == Action.JUMP)
+					this.obj.GetComponent<Animator> ().SetTrigger ("jump_down");
+				else
+					this.obj.GetComponent<Animator> ().SetTrigger ("move_down");
+			}
 				position = new Vector3 (position.x, position.y - map.get (0, 0).length () / Speed, position.z);
 		}
 		public void moveLeft()
@@ -354,6 +372,13 @@ namespace ObjectHierachy
 
 		public void moveRight()
 		{
+			if (moveFlag) {
+				moveFlag = false;
+				if (characterStatus.action == Action.JUMP)
+					this.obj.GetComponent<Animator> ().SetTrigger ("jump_right");
+				else
+					this.obj.GetComponent<Animator> ().SetTrigger ("move_right");
+			}
 				position = new Vector3 (position.x+  map.get (0, 0).length () / Speed, position.y, position.z);
 		}
 
@@ -452,7 +477,7 @@ namespace ObjectHierachy
 			if (_tmp != null) 
 			{
 				if (_tmp.instruction == INSTRUCTION.MOVE) {
-					this.Speed = 20f;
+					this.Speed = 50f;
 
 					int _x = x;
 					int _y = y;
@@ -479,7 +504,7 @@ namespace ObjectHierachy
 				} 
 				else if (_tmp.instruction == INSTRUCTION.JUMP) 
 				{
-					this.Speed = 13f;
+					this.Speed = 35f;
 
 					int _x = x;
 					int _y = y;
@@ -508,7 +533,7 @@ namespace ObjectHierachy
 					}
 
 				} else if (_tmp.instruction == INSTRUCTION.BREAK) {
-					this.Speed = 20f;
+					this.Speed = 50f;
 
 					int _x = x;
 					int _y = y;

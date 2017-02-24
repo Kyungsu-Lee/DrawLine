@@ -36,9 +36,11 @@ public class CharacterJumpUpEvent : MonoBehaviour {
 
 
 		if (Resource.character.characterStatus.action == ObjectHierachy.Action.JUMP && start 
-			|| Resource.character.characterStatus.action == ObjectHierachy.Action.BREAK && start) {
+			|| Resource.character.characterStatus.action == ObjectHierachy.Action.BREAK && start) 
+		{
 
-			if (Resource.character.characterStatus.action == ObjectHierachy.Action.JUMP) {
+			if (Resource.character.characterStatus.action == ObjectHierachy.Action.JUMP) 
+			{
 
 				Point p = Resource.character.characterStatus.PointQueue.Peek () as Point;
 				Point q;
@@ -64,41 +66,7 @@ public class CharacterJumpUpEvent : MonoBehaviour {
 
 			if (!Resource.character.checkDistance(endPosition, 0.1f)) 
 			{
-				time += Time.deltaTime;
-				if (initPotision.x != endPosition.x)
-					Resource.character.obj.GetComponent<Transform> ().localScale = 
-					new Vector3 (
-						x * (Mathf.Abs ((4 * scaleRate * (position_x - initPotision.x) * (position_x - endPosition.x) / (Mathf.Pow (initPotision.x - endPosition.x, 2)))) + 1),
-						y * (Mathf.Abs ((4 * scaleRate * (position_x - initPotision.x) * (position_x - endPosition.x) / (Mathf.Pow (initPotision.x - endPosition.x, 2)))) + 1),
-						Resource.character.obj.GetComponent<Transform> ().localScale.z
-					);
-				else {
-					Resource.character.obj.GetComponent<Transform> ().localScale = 
-					new Vector3 (
-						x * (Mathf.Abs ((4 * scaleRate * (position_y - initPotision.y) * (position_y - endPosition.y) / (Mathf.Pow ((initPotision.y - endPosition.y), 2)))) + 1),
-						y * (Mathf.Abs ((4 * scaleRate * (position_y - initPotision.y) * (position_y - endPosition.y) / (Mathf.Pow ((initPotision.y - endPosition.y), 2)))) + 1),
-						Resource.character.obj.GetComponent<Transform> ().localScale.z
-					);
-
-					//CharacterErrorEvent.error_jmp = true;
-				}
-				/*
-				if(initPotision.x != endPosition.x)
-					this.camera.GetComponent<Camera> ().orthographicSize = orthSize *  (Mathf.Abs ((4 * orthrate * (position_x - initPotision.x) * (position_x - endPosition.x) / (Mathf.Pow (initPotision.x - endPosition.x, 2)))) + 1);
-				else
-					this.camera.GetComponent<Camera> ().orthographicSize = orthSize *  (Mathf.Abs ((4 * orthrate * (position_y - initPotision.y) * (position_y - endPosition.y) / (Mathf.Pow (initPotision.y - endPosition.y, 2)))) + 1);
-*/
-
-				if (initPotision.x != endPosition.x)
-					Resource.character.obj.GetComponent<Transform> ().position = 
-					new Vector3 (
-						position_x,
-						initPotision.y + (Mathf.Abs ((4 * rate * (position_x - initPotision.x) * (position_x - endPosition.x) / (Mathf.Pow (initPotision.x - endPosition.x, 2))))),
-						initPotision.z
-					);
-				else {
-				}
-		
+				
 			} 
 			else{
 				//Resource.character.Moving = false;

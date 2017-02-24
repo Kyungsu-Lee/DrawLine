@@ -109,6 +109,32 @@ namespace ObjectHierachy
 		{
 			return this.obj.name.ToString ();
 		}
+
+		public void hide()
+		{
+			this.obj.GetComponent<SpriteRenderer> ().color = 
+				new Color 
+				(
+					this.obj.GetComponent<SpriteRenderer> ().color.r,
+					this.obj.GetComponent<SpriteRenderer> ().color.g,
+					this.obj.GetComponent<SpriteRenderer> ().color.b,
+					0
+				);
+		}
+
+		public void show()
+		{
+			Debug.Log (obj.name);
+			this.obj.GetComponent<SpriteRenderer> ().color = 
+				new Color 
+				(
+					this.obj.GetComponent<SpriteRenderer> ().color.r,
+					this.obj.GetComponent<SpriteRenderer> ().color.g,
+					this.obj.GetComponent<SpriteRenderer> ().color.b,
+					1
+				);
+			
+		}
 	}
 
 }
