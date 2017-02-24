@@ -544,10 +544,13 @@ namespace ObjectHierachy
 						if (direction == INSTRUCTION.LEFT) {
 							_x--;
 						} else if (direction == INSTRUCTION.UP) {
+							obj.GetComponent<Animator> ().SetTrigger ("punch_up");
 							_y++;
 						} else if (direction == INSTRUCTION.DOWN) {
+							obj.GetComponent<Animator> ().SetTrigger ("punch_down");
 							_y--;
 						} else if (direction == INSTRUCTION.RIGHT) {
+							obj.GetComponent<Animator> ().SetTrigger ("punch_right");
 							_x++;
 						}
 

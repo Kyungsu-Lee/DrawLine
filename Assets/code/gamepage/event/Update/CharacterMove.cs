@@ -44,6 +44,11 @@ public class CharacterMove : MonoBehaviour {
 						return;
 					}
 				}
+
+				if (character.characterStatus.action == ObjectHierachy.Action.BREAK && !character.ActionFinished)
+					return;
+				else if (character.characterStatus.action == ObjectHierachy.Action.BREAK && character.ActionFinished)
+					character.characterStatus.action = ObjectHierachy.Action.MOVE;
 		
 				//FileHelper.FileStreamHelper.log ("character moving");
 
